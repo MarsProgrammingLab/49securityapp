@@ -1,5 +1,5 @@
 body {
-    background-color: snow;
+    background-color:wheat;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
 
@@ -11,22 +11,26 @@ header ul {
     color: forestgreen;
     display:inline-flex; 
     justify-content: space-between;
+    border-style:double;
   }
 
 header li {
     float: left;
     background-color: black;
+    
+    
   }
   
 header li a {
     font-weight: bolder;
     display: block;
-    color: white;
+    color: palegoldenrod;
     text-align: center;
     padding: 16px 16px;
     text-decoration: none;
     background-color: black;
     margin: 5px;
+    
   }
 
 header li a:hover {
