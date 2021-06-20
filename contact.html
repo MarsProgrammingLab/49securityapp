@@ -8,13 +8,53 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="styles.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css" />
+        
+        
+        
+        <!--Jquery fadeIn and fadeOut plugins-->
+        <script>
+        $(document).ready(function()
+        {
+            $("#div_contact").click(function(){
+                $(".mainform").fadeIn();
+            });
+            $("#hide").click(function(){
+                $(".mainform").fadeOut();
+            });         
+    });
+        </script>
+        <!--Autocomplete Widget-->
+        <script>
+               $(document).ready(function() {              
+                var names = [
+                    "Islam Obaidat",
+                    "Fakhr Abbas",
+                    "Gokulkumar Panneerselvam",
+                    "Martavias Cary",
+                    ];
+                    $("#name").autocomplete({
+                    source: names
+                    
+            });
+        });
+        </script>
+         
         <style>
             .about, .uabout  {  
                 text-align: justify;
                 letter-spacing: 3px;
                 font-weight: bolder;
-                color:green;
+                color:black;
             }
+
+            .ui-front {
+            z-index: 1001;
+            display:contents;
+            }
+
             .h1{
                 letter-spacing: 3px;
                 font-weight: bolder;
@@ -26,10 +66,76 @@
                 border-style:double;
                 
             }
+            p{
+                margin: 20px;
+            }
+            #div_contact{
+                
+                margin: 20px;
+                padding: 10px;
+                background-color: #04AA6D;
+                color: #FFFF00;
+                
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                float: left;
+            }
+            .buttons{
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+            
+            #hide{
+                margin: 20px;
+                padding: 10px;
+                background-color: #04AA6D;
+                color: #FFFF00;   
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                float: right;
+                
+            }
+
             a{
                 margin: 20px;
             }
+            
+            .mainform{
+                border-radius: 5px;
+                background-color: #DAA520;
+                padding: 20px;
+            }
+             input[type=text] {
+                padding:5px; 
+                border:2px solid #006400; 
+                -webkit-border-radius: 5px;
+                border-radius: 5px;
+            }
+            textarea{
+                padding:5px; 
+                border:2px solid #006400; 
+                -webkit-border-radius: 5px;
+                border-radius: 5px;
+
+            }
+             input[type=button] {
+                background-color: #04AA6D;
+                color: #FFFF00;
+                padding: 10px 20px;
+                border:#FFFF00;
+                border-radius: 15px;
+                cursor: pointer;
+                float: left;
+                }
             </style>
+           
+            
     </head>
     <body>
         <header>
@@ -41,15 +147,46 @@
                     <li><a href="pastpresidents.html">Previous Presidents</a></li>       
                 </ul>
             </nav> 
+            
         </header>
+        
         <h1 class = "h1"><strong>49th Security Division Ethical Hacking Club of UNC Charlotte</strong></h1><br>      
         <p class = "about">                    
             
             <ul class = "uabout">                        
                 <li>Please email us at 49thSecurityDivision (AT) uncc.edu to join slack or for other inquiries. </li>                
             </ul>
-                
-        </p><br>
+        
+            <br>
+            <p>Click below to access our contact form: </p>
+            <div class = "buttons">
+                <button id="div_contact">Contact Form</button>
+                <button id="hide">Hide form</button>
+            </div>
+            
+            <br><br><br><br><br><br>
+            <!--<div id = "div_form" style="display:none;"> -->
+               
+                <div class="mainform" style="display:none;">
+                    <h2><strong>Have questions or want to learn more about our student organization?</strong></h2>
+                    <form id="form">  
+                    <p id="message1"></p>
+                    <label for = "name">Name <span>*</span></label><br>
+                    <input type="text" id="name" placeholder="Fullname"/><br><br>
+                    <label>Email <span>*</span></label><br>
+                    <input type="text" id="email" placeholder="Email"/><br><br>
+                    <label>Contact No <span>*</span></label><br>
+                    <input type="text" id="contact" placeholder="10 digit Mobile no."/><br><br><br>
+                    <label>Message</label><br>
+                    <textarea id="message2" placeholder="Message......."></textarea><br><br>
+                        
+                <br>  
+                <input type="button" id="submit" value="Send Message"/><br>
+            
+        </form> 
+    </div>
+             
+        <br>
         <a href="https://validator.w3.org/">Validate This Link</a>            
         
     </body>
