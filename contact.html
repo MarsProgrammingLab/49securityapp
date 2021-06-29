@@ -9,7 +9,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="styles.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+        <script src = "emailapp.js"></script>
         <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css" />
         
         
@@ -24,6 +26,7 @@
             $("#hide").click(function(){
                 $(".mainform").fadeOut();
             });         
+
     });
         </script>
         <!--Autocomplete Widget-->
@@ -88,6 +91,12 @@
                 left: 50%;
                 -ms-transform: translate(-50%, -50%);
                 transform: translate(-50%, -50%);
+            }
+            #submit{
+                background-color: #04AA6D;
+                color: #FFFF00;
+                
+
             }
             
             #hide{
@@ -169,19 +178,20 @@
                
                 <div class="mainform" style="display:none;">
                     <h2><strong>Have questions or want to learn more about our student organization?</strong></h2>
-                    <form id="form">  
+                    
+                    <form  id="form2" action = "data.php" method = "POST">  
                     <p id="message1"></p>
                     <label for = "name">Name <span>*</span></label><br>
-                    <input type="text" id="name" placeholder="Fullname"/><br><br>
+                    <input type="text" id="name" name = name placeholder="Fullname"/><br><br>
                     <label>Email <span>*</span></label><br>
-                    <input type="text" id="email" placeholder="Email"/><br><br>
+                    <input type="text" id="email" name = email placeholder="Email"/><br><br>
                     <label>Contact No <span>*</span></label><br>
-                    <input type="text" id="contact" placeholder="10 digit Mobile no."/><br><br><br>
+                    <input type="text" id="contact" name = contact placeholder="10 digit Mobile no."/><br><br><br>
                     <label>Message</label><br>
-                    <textarea id="message2" placeholder="Message......."></textarea><br><br>
+                    <textarea id="message2" name = message placeholder="Message......." ></textarea><br><br>
                         
                 <br>  
-                <input type="button" id="submit" value="Send Message"/><br>
+                <input type="submit" id="submit" name = "submit" value="Send Message"><span class="output"></span><br>
             
         </form> 
     </div>
